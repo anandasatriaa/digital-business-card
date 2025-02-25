@@ -76,19 +76,24 @@
         opacity: 1;
         transform: translateX(-50%) scale(1);
       }
+
+      /* Ukuran awal logo */
+      #headerLogo {
+        transition: all 0.3s ease; /* Animasi transisi */
+        max-height: 80px; /* Ukuran default */
+      }
+
+      /* Ketika header memiliki kelas .scrolled, logo akan mengecil */
+      .header.scrolled #headerLogo {
+        max-height: 50px; /* Ukuran logo ketika discroll */
+      }
     </style>
   </head>
 
   <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="assets/img/logo-milenia-rm.png" alt="" />
-          <!-- <h1 class="sitename">Append</h1><span>.</span> -->
-        </a>
-
-        <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" class="navmenu order-1">
           <!-- <ul>
           <li><a href="index.html#hero" class="active">Home</a></li>
           <li><a href="index.html#about">About</a></li>
@@ -116,11 +121,16 @@
           </li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul> -->
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <i class="mobile-nav-toggle d-none bi bi-list"></i>
         </nav>
 
         <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
       </div>
+      <a href="index.html" class="logo d-flex align-items-center order-2">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo-milenia-rm.png" alt="Logo" id="headerLogo" />
+        <!-- <h1 class="sitename">Append</h1><span>.</span> -->
+      </a>
     </header>
 
     <main class="main">
@@ -132,9 +142,7 @@
           <div class="row">
             <div class="col-lg-10">
               <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-              <p data-aos="fade-up" data-aos-delay="200">
-                For more information, visit our main website
-              </p>
+              <p data-aos="fade-up" data-aos-delay="200">For more information, visit our main website</p>
             </div>
             <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
               <form action="forms/newsletter.php" method="post" class="php-email-form">
@@ -1294,5 +1302,20 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var header = document.getElementById("header");
+
+        window.addEventListener("scroll", function () {
+          // Jika scroll melebihi 50px, tambahkan kelas .scrolled
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
