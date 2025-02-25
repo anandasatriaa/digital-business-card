@@ -87,6 +87,37 @@
       .header.scrolled #headerLogo {
         max-height: 50px; /* Ukuran logo ketika discroll */
       }
+
+      /* Container agar konten berada di tengah */
+      .center-btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      /* Efek loncat (bounce) pada tombol */
+      .bounce {
+        animation: bounce 2s infinite;
+        border-radius: 50%;
+        padding: 10px 15px; /* Sesuaikan padding jika diperlukan */
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
     </style>
   </head>
 
@@ -142,14 +173,13 @@
           <div class="row">
             <div class="col-lg-10">
               <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-              <p data-aos="fade-up" data-aos-delay="200">For more information, visit our main website</p>
+              <p data-aos="fade-up" data-aos-delay="200">This website provides detailed information about our vision, mission, and branch offices.</p>
             </div>
             <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
               <form action="forms/newsletter.php" method="post" class="php-email-form">
-                <div class="sign-up-form">
-                  <input type="email" name="" value="Milenia Group" readonly />
-                  <a href="https://ccas.co.id" target="_blank" class="btn w-50" style="background-color: #660ff1; border-color: #660ff1; color: #fff">
-                    <i class="bi bi-globe"></i> MILENIA
+                <div class="center-btn-container">
+                  <a href="#about" class="btn bounce" style="background-color: #660ff1; border-color: #660ff1; color: #fff">
+                    <i class="bi bi-chevron-down"></i>
                   </a>
                 </div>
                 <div class="loading">Loading</div>
@@ -394,31 +424,30 @@
       <!-- /Services Section -->
 
       <!-- Features Section -->
-      <!-- <section id="features" class="features section">
+      <section id="features" class="features section">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Features</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+          <h2>Milenia Group Main Website</h2>
+          <p>Welcome to the primary online hub of Milenia Group, where you can explore about Milenia Group details.</p>
         </div>
 
         <div class="container">
           <div class="row gy-4 align-items-center features-item">
             <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-              <h3>Corporis temporibus maiores provident</h3>
+              <h3>Discover Our Digital Presence</h3>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                Explore our main website to learn more about Milenia Group’s corporate. Our digital platform is designed to offer a seamless experience and comprehensive information about our services.
               </p>
-              <a href="#" class="btn btn-get-started">Get Started</a>
+              <a href="https://ccas.co.id/" target="_blank" class="btn btn-get-started"><i class="bi bi-globe me-2"></i>Visit Main Website</a>
             </div>
             <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
               <div class="image-stack">
-                <img src="assets/img/features-light-1.jpg" alt="" class="stack-front" />
-                <img src="assets/img/features-light-2.jpg" alt="" class="stack-back" />
+                <img src="assets/img/web1.PNG" alt="Main Website Screenshot" class="stack-front" />
+                <img src="assets/img/web2.PNG" alt="Website Preview" class="stack-back" />
               </div>
             </div>
           </div>
 
-          <div class="row gy-4 align-items-stretch justify-content-between features-item">
+          <!-- <div class="row gy-4 align-items-stretch justify-content-between features-item">
             <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
               <img src="assets/img/features-light-3.jpg" class="img-fluid" alt="" />
             </div>
@@ -435,9 +464,9 @@
               </ul>
               <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
             </div>
-          </div>
+          </div> -->
         </div>
-      </section> -->
+      </section>
       <!-- /Features Section -->
 
       <!-- Portfolio Section -->
